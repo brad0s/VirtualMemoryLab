@@ -16,30 +16,12 @@ class Memory {
     }
   }
 
-  // getLength() {
-  //   return this.pagesFrames
-  // }
-
   // getFreePage() {
   //   console.log(this.pageFrames.length);
   //   if (this.pagesFrames.length == 30) {
   //     this.pageFrames[0].inMemory = "0";
   //     this.pageFrames[0] = undefined;
   //   }
-  // }
-  // setFrame(frame, PageTableEntry pte) { //set the frame in memory
-  // }
-
-  // getFrame(frame) { //get the frame from memory of type PTE
-  // }
-
-  // getFreePage() { //make spae for a new PTE in array
-  // }
-
-  // findSwapPage() { //idk
-  // }
-
-  // convert(frame) { //idk
   // }
 }
 

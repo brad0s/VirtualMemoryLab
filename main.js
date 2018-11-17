@@ -4,7 +4,7 @@ const ProcessTable = require("./ProcessTable.js");
 const PageTableEntry = require("./PageTableEntry.js");
 const Memory = require("./Memory.js");
 
-let inputFile = "VMInput2.txt";  //read in and parse the input file
+let inputFile = "VMInput.txt";  //read in and parse the input file
 let str = fs.readFileSync(inputFile,'utf8'); //read in the entire file
 var file = str.split("\n"); //split file by line
 var commands = new Array();
@@ -35,7 +35,7 @@ for (var i=0; i<commands.length;i++) { //change to commands.length
       var bitShift = memoryId >> 10;
       access = access + 1;
       pageTableEntry = new PageTableEntry(bitShift);
-      console.log(typeof currentPageTable.getPageTableEntry(bitShift));
+      //console.log(typeof currentPageTable.getPageTableEntry(bitShift));
       if (typeof currentPageTable.getPageTableEntry(bitShift) === 'undefined') { //PTE does not exist
         pageTableEntry.isExist ="1";
         miss = miss + 1;
@@ -51,7 +51,6 @@ for (var i=0; i<commands.length;i++) { //change to commands.length
         
       } 
         else {
-          console.log(currentPageTable.getPageTableEntry(bitShift));
           if (currentPageTable.getPageTableEntry(bitShift).inMemory == "1") { //PTE is in memory
             hits = hits + 1;
           }
@@ -65,7 +64,6 @@ for (var i=0; i<commands.length;i++) { //change to commands.length
       break;
   }
 }
-console.log(memory.pageFrames);
 console.log("Access: " + access);
 console.log("Hits: " + hits);
 console.log("Misses: " + miss);

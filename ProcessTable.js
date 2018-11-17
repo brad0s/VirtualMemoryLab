@@ -18,7 +18,6 @@ class ProcessTable {
       }
     }
   }
-
 }
 
 module.exports = ProcessTable;
